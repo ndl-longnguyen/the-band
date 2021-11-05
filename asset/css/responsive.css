@@ -2,9 +2,7 @@
 
 /* PC */
 @media (min-width: 1024px) {
-    .submit-btn {
-        margin-right: 8px;
-    }
+    
 }
 
 /* Tablet */
@@ -101,6 +99,10 @@
 
     .submit-btn.btn {
         display: block;
+    }
+
+    .submit-btn {
+        margin-right: 0;
     }
 
     #slider .text-content {

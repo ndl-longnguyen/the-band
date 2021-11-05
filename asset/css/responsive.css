@@ -14,6 +14,11 @@
 
 /* Mobile */
 @media (max-width: 739px) {
+    .pd0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
     .mt8 {
         margin-top: 0px !important;
     }
@@ -89,13 +94,7 @@
     }
 
     .row.contact-content .col {
-        padding: 5px 4px;
-    }
-
-    .submit-btn {
-        width: 98.5%;
-        margin-left: 4px;
-        margin-right: 4px;
+        padding: 5px 8px;
     }
 
     .submit-btn.btn {

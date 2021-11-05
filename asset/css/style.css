@@ -338,7 +338,6 @@ html {
 
 .btn {
     color: #fff;
-    text-decoration: none;
     background-color: #000;
     padding: 11px 16px;
     display: inline-block;
@@ -385,11 +384,7 @@ html {
 }
 
 .submit-btn {
-    background-color: #000;
-    color: #fff;
-    border: none;
     float: right;
-    padding: 11px 17px;
 }
 
 .map-section img{

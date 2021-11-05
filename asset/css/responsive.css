@@ -2,7 +2,9 @@
 
 /* PC */
 @media (min-width: 1024px) {
-    
+    .submit-btn {
+        margin-right: 8px;
+    }
 }
 
 /* Tablet */

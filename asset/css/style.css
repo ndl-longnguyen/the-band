@@ -155,6 +155,14 @@ html {
     font-size: 14px;
 }
 
+.menu-btn {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#header .menu-btn,
 #header .search-btn {
     float: right;
     padding: 0 21px;
@@ -164,6 +172,16 @@ html {
     background-color: red;
 }
 
+#header .menu-btn:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+#header .menu-btn:hover .menu-icon{
+    color: #000;
+}
+
+#header .menu-btn .menu-icon,
 #header .search-btn .search-icon {
     font-size: 20px;
     color: #fff;
@@ -173,7 +191,7 @@ html {
 #slider {
     margin-top: 46px;
     padding-top: 50%; /* 50% chiều ngang của chính nó */
-    background: url('/TheBanProject/asset/bacground/slider1.jpg') top center / cover no-repeat ;
+    background: url('../bacground/slider1.jpg') top center / cover no-repeat ;
     /* background : url() position / size repeat */
     position: relative;
 }
@@ -204,7 +222,8 @@ html {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding: 64px 0 112px;
+    padding-top: 64px;
+    padding-bottom: 112px;
 }
 
 #content .section-heading {
@@ -344,6 +363,15 @@ html {
 
 .contact-info i[class*="ti-"] {
     padding: 10px;
+}
+
+.contact-info a {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    opacity: 0.6;
 }
 
 .contact-form {

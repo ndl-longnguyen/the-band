@@ -49,6 +49,7 @@ menuBtn.addEventListener('click', function () {
 
 // Automatic Slideshow
 const sliderElement = document.querySelector('#slider');
+var listSlider = ["slider1", "slider2", "slider3", "slider4" , "slider5"];
 
 var myIndex = 0;
 carousel();
@@ -62,7 +63,8 @@ function carousel() {
     myIndex++;
     if (myIndex > x.length) { myIndex = 1 }
     x[myIndex - 1].style.display = "block";
-    sliderElement.style.background = "url('./asset/bacground/slider"+myIndex+".jpg') top center / cover no-repeat";
+    // sliderElement.style.backgroundImage = "url('./asset/bacground/slider"+myIndex+".jpg') top center / cover no-repeat";
+    sliderElement.style.backgroundImage = "url('./asset/bacground/"+listSlider[myIndex-1]+".jpg')";
     setTimeout(carousel, 4000); // Change image every 3 seconds
 }
 
@@ -74,15 +76,16 @@ const items = document.querySelectorAll('#nav li a[href*="#"]');
 for (var i = 0; i <= items.length; i++) {
     var item = items[i];
 
-    item.onclick = function () {
-        var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
-        if (isParentMenu) {
-            return false;
-        } else {
-            headerElement.style.height = null;
-        }
-    };
-
+    if(item) {
+        item.addEventListener('click', function (event) {
+            var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+            if (isParentMenu) {
+                event.preventDefault();
+            } else {
+                headerElement.style.height = null;
+            }
+        });
+    }
 }
 
 

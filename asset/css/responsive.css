@@ -106,7 +106,7 @@
     }
 
     #slider .text-content {
-        display: none;
+        display: none !important;
     }
 
     .btn {

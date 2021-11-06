@@ -14,7 +14,7 @@ function hideBuyTickets() {
 }
 
 //lang nghe click cua 3 btn buy ticket
-for ( const buyBtn of buyBtns){
+for (const buyBtn of buyBtns) {
     buyBtn.addEventListener('click', showBuyTickets)
 }
 
@@ -38,29 +38,51 @@ const navElement = document.querySelector('#nav');
 var heightHeader = headerElement.clientHeight;
 
 menuBtn.addEventListener('click', function () {
-    var isClose =  headerElement.clientHeight === heightHeader;
+    var isClose = headerElement.clientHeight === heightHeader;
 
-    if(isClose) {
+    if (isClose) {
         headerElement.style.height = 'auto';
-    }else {
+    } else {
         headerElement.style.height = null;
     }
 })
 
+// Automatic Slideshow
+const sliderElement = document.querySelector('#slider');
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.querySelectorAll('.text-content');
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) { myIndex = 1 }
+    x[myIndex - 1].style.display = "block";
+    sliderElement.style.background = "url('./asset/bacground/slider"+myIndex+".jpg') top center / cover no-repeat";
+    setTimeout(carousel, 4000); // Change image every 3 seconds
+}
+
+
+
 // click an menu
 const items = document.querySelectorAll('#nav li a[href*="#"]');
 
-for( var i = 0; i <= items.length; i++){
+for (var i = 0; i <= items.length; i++) {
     var item = items[i];
 
-    item.onclick = function (){
+    item.onclick = function () {
         var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
-        if(isParentMenu){
+        if (isParentMenu) {
             return false;
-        }else {
+        } else {
             headerElement.style.height = null;
         }
     };
-    
+
 }
+
 
